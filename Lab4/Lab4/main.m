@@ -27,10 +27,16 @@ int main(int argc, const char * argv[]) {
                 // 1. get user input for name and email
                 NSString *name = [InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the name: "];
                 NSString *email = [InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the email: "];
-                //[InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the name: "];
                 
                 // 2. create a contact object based on the user input
                 Contact *newcontact = [[Contact alloc] initWithName:name andEmail:email];
+                NSString *phoneOption = [InputHandler getUserInputWithLength:1 withPrompt:@"\nDo you want to add phone number? (y/n)"] ;
+                if ([phoneOption isEqualToString:@"y"]) {
+                    NSString *phone = [InputHandler getUserInputWithLength:20 withPrompt:@"\nHome / Work / Mobile?"];
+                    if (<#condition#>) {
+                        <#statements#>
+                    }
+                }
                 
                 // 3. add the contact to ContactList's contactList
                 [contactList addContact:newcontact];
