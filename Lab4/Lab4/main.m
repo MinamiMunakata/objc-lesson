@@ -14,8 +14,10 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         ContactList *contactList = [[ContactList alloc] init];
+
         while (true) {
             NSString *menu = @"\nWhat would you like to do next?\nnew - Create a new contact\nlist - List all contacts\nshow - See details\nfind keyword - search for the contact information by the keyword\nquit - Exit Application\n> ";
+
             
             NSString *option = [InputHandler getUserInputWithLength:20 withPrompt:menu];
             
@@ -24,6 +26,7 @@ int main(int argc, const char * argv[]) {
             } else if ([option isEqualToString:@"new"]) {
                 // 1. get user input for name and email
                 NSString *email = [InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the email: "];
+
                 if ([contactList isDublicate:email]) {
                     NSLog(@"\nThe email is already added in the contact list");
                 } else {
@@ -50,6 +53,7 @@ int main(int argc, const char * argv[]) {
                             } else {
                                 NSLog(@"\nInvalid input. Choose again.");
                             }
+
                         }
                     }
                     // 2. create a contact object based on the user input
@@ -57,6 +61,7 @@ int main(int argc, const char * argv[]) {
                     // 3. add the contact to ContactList's contactList
                     [contactList addContact:newcontact];
                 }
+
             } else if ([option isEqualToString:@"list"]) {
                 NSLog(@"%@", contactList);;
             } else if ([option isEqualToString:@"show"]) {
