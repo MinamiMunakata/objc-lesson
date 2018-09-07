@@ -10,6 +10,7 @@
 
 @implementation Contact
 - (instancetype)initWithName: (NSString *) name andEmail: (NSString *)email andPhone: (NSMutableDictionary *)phoneBook
+
 {
     self = [super init];
     if (self) {
@@ -22,7 +23,9 @@
 
 - (NSString *)description
 {
+
     return [NSString stringWithFormat:@"<%@> (%@)", self.name, self.email];
+
 }
 
 @end
