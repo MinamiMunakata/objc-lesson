@@ -24,4 +24,9 @@
     return [NSString stringWithFormat:@"\n<%@> (%@)", self.name, self.email];
 }
 
+- (NSString *)detail
+{
+    
+}
+
 @end
