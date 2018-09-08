@@ -80,6 +80,8 @@ int main(int argc, const char * argv[]) {
                     }
                 }
 
+            } else if ([option isEqualToString:@"history"]) {
+                [inputHandler showCommandHistory];
             }
         }
     }
