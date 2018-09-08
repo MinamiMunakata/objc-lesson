@@ -9,11 +9,21 @@
 #import "InputHandler.h"
 
 @implementation InputHandler
-+ (NSString *) getUserInputWithLength: (int) maxLength withPrompt: (NSString *)prompt{
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _commandHistory = [NSMutableArray new];
+    }
+    return self;
+}
+
+- (NSString *) getUserInputWithLength: (int) maxLength withPrompt: (NSString *)prompt{
     if (maxLength < 1) {
         maxLength = 255;
     }
-    
+
     NSLog(@"%@",prompt);
     char inputChars[maxLength];
     
@@ -24,7 +34,7 @@
     return result;
 }
 
-+ (NSString *) getUserInputWithoutNewLine: (NSString *)prompt andLength: (int) maxLength{
+- (NSString *) getUserInputWithoutNewLine: (NSString *)prompt andLength: (int) maxLength{
     if (maxLength < 1) {
         maxLength = 255;
     }
@@ -38,5 +48,14 @@
     result = [result stringByTrimmingCharactersInSet:newLine];
     return result;
 }
+
+- (void) storeCommandHistory: (NSString *) command{
+    if ([self.commandHistory count] > 3) {
+        [self.commandHistory removeObjectAtIndex:0];
+    }
+    [self.commandHistory addObject:command];
+
+}
+
 
 @end
