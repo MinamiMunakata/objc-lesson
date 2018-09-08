@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface InputHandler : NSObject
-+ (NSString *) getUserInputWithLength: (int) maxLength withPrompt: (NSString *)prompt;
-+ (NSString *) getUserInputWithoutNewLine: (NSString *)prompt andLength: (int) maxLength;
+@property (nonatomic, strong) NSMutableArray *commandHistory;
+- (NSString *) getUserInputWithLength: (int) maxLength withPrompt: (NSString *)prompt;
+- (NSString *) getUserInputWithoutNewLine: (NSString *)prompt andLength: (int) maxLength;
 
 @end

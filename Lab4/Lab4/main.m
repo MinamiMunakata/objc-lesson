@@ -14,32 +14,33 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         ContactList *contactList = [[ContactList alloc] init];
+        InputHandler *inputHandler = [InputHandler new];
 
         while (true) {
             NSString *menu = @"\nWhat would you like to do next?\nnew - Create a new contact\nlist - List all contacts\nshow - See details\nfind keyword - search for the contact information by the keyword\nquit - Exit Application\n> ";
 
             
-            NSString *option = [InputHandler getUserInputWithLength:20 withPrompt:menu];
+            NSString *option = [inputHandler getUserInputWithLength:20 withPrompt:menu];
             
             if ([option isEqualToString:@"quit"]) {
                 break;
             } else if ([option isEqualToString:@"new"]) {
                 // 1. get user input for name and email
-                NSString *email = [InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the email: "];
+                NSString *email = [inputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the email: "];
 
                 if ([contactList isDublicate:email]) {
                     NSLog(@"\nThe email is already added in the contact list");
                 } else {
-                    NSString *name = [InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the name: "];
+                    NSString *name = [inputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the name: "];
                     NSMutableDictionary *phoneBook = [NSMutableDictionary dictionary];
                     
                     while (true) {
-                        NSString *phoneOption = [InputHandler getUserInputWithLength:10 withPrompt:@"\nDo you want to add phone number? (y/n)"];
+                        NSString *phoneOption = [inputHandler getUserInputWithLength:10 withPrompt:@"\nDo you want to add phone number? (y/n)"];
                         if ([phoneOption isEqualToString:@"n"]) {
                             break;
                         } else if ([phoneOption isEqualToString:@"y"]) {
-                            NSString *phone = [InputHandler getUserInputWithLength:20 withPrompt:@"\nEnter the phone number: "];
-                            NSString *phoneLabel = [InputHandler getUserInputWithLength:30 withPrompt:@"\nChoose [home / work / mobile]"];
+                            NSString *phone = [inputHandler getUserInputWithLength:20 withPrompt:@"\nEnter the phone number: "];
+                            NSString *phoneLabel = [inputHandler getUserInputWithLength:30 withPrompt:@"\nChoose [home / work / mobile]"];
                             if ([phoneLabel isEqualToString:@"home"]) {
                                 
                                 [phoneBook setObject:phone forKey:@"home"];
@@ -65,7 +66,7 @@ int main(int argc, const char * argv[]) {
             } else if ([option isEqualToString:@"list"]) {
                 NSLog(@"%@", contactList);;
             } else if ([option isEqualToString:@"show"]) {
-                NSString *phoneBookId = [InputHandler getUserInputWithLength:10 withPrompt:@"\nEnter the id: "];
+                NSString *phoneBookId = [inputHandler getUserInputWithLength:10 withPrompt:@"\nEnter the id: "];
                 NSLog(@"%@", [contactList showDetailsAtIndex:[phoneBookId intValue]]);
             } else if ([option containsString:@"find"]){
                 NSArray *option_array = [option componentsSeparatedByString:@" "];
