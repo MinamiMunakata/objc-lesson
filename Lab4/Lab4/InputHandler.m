@@ -31,6 +31,7 @@
     NSString *result = [NSString stringWithCString:cstring encoding:NSUTF8StringEncoding];
     NSCharacterSet *whitespaceAndNewLine = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     result = [result stringByTrimmingCharactersInSet:whitespaceAndNewLine];
+    [_commandHistory addObject:result];
     return result;
 }
 
@@ -49,11 +50,17 @@
     return result;
 }
 
-- (void) storeCommandHistory: (NSString *) command{
-    if ([self.commandHistory count] > 3) {
-        [self.commandHistory removeObjectAtIndex:0];
+- (void) showCommandHistory{
+    int i = 0;
+    while ([self.commandHistory count] > 3) {
+        [self.commandHistory removeObjectAtIndex:i];
     }
-    [self.commandHistory addObject:command];
+    NSMutableString *last3comand = [NSMutableString new];
+    for (NSString *command in self.commandHistory) {
+        [last3comand appendString:@"\n"];
+        [last3comand appendString:command];
+    }
+    NSLog(@"%@", last3comand);
 
 }
 
