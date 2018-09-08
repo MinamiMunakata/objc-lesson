@@ -9,11 +9,10 @@
 #import "Contact.h"
 
 @implementation Contact
-- (instancetype)initWithId: (int) id andName: (NSString *) name andEmail: (NSString *)email andPhone: (NSMutableDictionary *)phoneBook
+- (instancetype)initWithName: (NSString *) name andEmail: (NSString *)email andPhone: (NSMutableDictionary *)phoneBook
 {
     self = [super init];
     if (self) {
-        _id = id;
         _name = name;
         _email = email;
         _phoneBook = phoneBook;
@@ -23,12 +22,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"\n<%@> (%@)", self.name, self.email];
-}
-
-- (NSString *)detail
-{
-    return @"Hey";
+    return [NSString stringWithFormat:@"<%@> (%@)", self.name, self.email];
 }
 
 @end
