@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E9FB9BC2146D7950036AA5C /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB9BB2146D7950036AA5C /* QuestionManager.m */; };
 		5EAC4136214188720097957A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC4135214188720097957A /* main.m */; };
 		5EAC413E21418CBB0097957A /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC413D21418CBB0097957A /* InputHandler.m */; };
 		5EAC4141214194B90097957A /* AdditionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC4140214194B90097957A /* AdditionQuestion.m */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E9FB9BA2146D7950036AA5C /* QuestionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionManager.h; sourceTree = "<group>"; };
+		5E9FB9BB2146D7950036AA5C /* QuestionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionManager.m; sourceTree = "<group>"; };
 		5EAC4132214188720097957A /* Lab3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab3; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAC4135214188720097957A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5EAC413C21418CBB0097957A /* InputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
@@ -69,6 +72,8 @@
 				5EAC4135214188720097957A /* main.m */,
 				5EAC413F214194B90097957A /* AdditionQuestion.h */,
 				5EAC4140214194B90097957A /* AdditionQuestion.m */,
+				5E9FB9BA2146D7950036AA5C /* QuestionManager.h */,
+				5E9FB9BB2146D7950036AA5C /* QuestionManager.m */,
 				5EAC413C21418CBB0097957A /* InputHandler.h */,
 				5EAC413D21418CBB0097957A /* InputHandler.m */,
 				5EAC41422141ABC40097957A /* ScoreKeeper.h */,
@@ -134,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E9FB9BC2146D7950036AA5C /* QuestionManager.m in Sources */,
 				5EAC41442141ABC40097957A /* ScoreKeeper.m in Sources */,
 				5EAC4136214188720097957A /* main.m in Sources */,
 				5EAC4141214194B90097957A /* AdditionQuestion.m in Sources */,
@@ -264,6 +270,7 @@
 				5EAC413B214188720097957A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

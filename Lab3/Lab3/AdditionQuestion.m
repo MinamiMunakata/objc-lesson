@@ -24,8 +24,19 @@
         
         // get the answer and assign to answer
         _answer = left + right;
+        
+        _startTime = [NSDate date];
     }
     return self;
+}
+
+- (NSInteger)answer {
+    _endTime = [NSDate date];
+    return _answer;
+}
+
+- (NSTimeInterval)answerTime{
+    return [_endTime timeIntervalSinceDate:_startTime];
 }
 
 @end
