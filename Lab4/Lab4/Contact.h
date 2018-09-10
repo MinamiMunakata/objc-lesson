@@ -11,7 +11,7 @@
 @interface Contact : NSObject
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * email;
-@property (nonatomic, strong) NSMutableDictionary * phoneList;
-- (instancetype)initWithName: (NSString *) name andEmail: (NSString *)email;
+@property (nonatomic, strong) NSMutableDictionary * phoneBook;
+- (instancetype)initWithName: (NSString *) name andEmail: (NSString *)email andPhone: (NSMutableDictionary *)phoneBook;
 
 @end

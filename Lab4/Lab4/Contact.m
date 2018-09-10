@@ -9,24 +9,20 @@
 #import "Contact.h"
 
 @implementation Contact
-- (instancetype)initWithName: (NSString *) name andEmail: (NSString *)email
+- (instancetype)initWithName: (NSString *) name andEmail: (NSString *)email andPhone: (NSMutableDictionary *)phoneBook
 {
     self = [super init];
     if (self) {
         _name = name;
         _email = email;
+        _phoneBook = phoneBook;
     }
     return self;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"\n<%@> (%@)", self.name, self.email];
-}
-
-- (NSString *)detail
-{
-    
+    return [NSString stringWithFormat:@"<%@> (%@)", self.name, self.email];
 }
 
 @end

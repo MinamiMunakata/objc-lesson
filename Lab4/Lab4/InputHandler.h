@@ -10,5 +10,6 @@
 
 @interface InputHandler : NSObject
 + (NSString *) getUserInputWithLength: (int) maxLength withPrompt: (NSString *)prompt;
++ (NSString *) getUserInputWithoutNewLine: (NSString *)prompt andLength: (int) maxLength;
 
 @end

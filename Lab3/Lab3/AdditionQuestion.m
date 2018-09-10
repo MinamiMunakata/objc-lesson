@@ -24,6 +24,7 @@
         
         // get the answer and assign to answer
         _answer = left + right;
+        
     }
     return self;
 }

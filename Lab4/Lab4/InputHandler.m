@@ -24,4 +24,19 @@
     return result;
 }
 
++ (NSString *) getUserInputWithoutNewLine: (NSString *)prompt andLength: (int) maxLength{
+    if (maxLength < 1) {
+        maxLength = 255;
+    }
+    
+    NSLog(@"%@",prompt);
+    char inputChars[maxLength];
+    
+    const char *cstring = fgets(inputChars,maxLength,stdin);
+    NSString *result = [NSString stringWithCString:cstring encoding:NSUTF8StringEncoding];
+    NSCharacterSet *newLine = [NSCharacterSet newlineCharacterSet];
+    result = [result stringByTrimmingCharactersInSet:newLine];
+    return result;
+}
+
 @end
