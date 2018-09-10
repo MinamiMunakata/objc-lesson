@@ -14,6 +14,8 @@
 // NSMutableArray -> ArrayList<>()
 @property (nonatomic, strong) NSMutableArray *contactList;
 - (void) addContact: (Contact *) newContact;
-- (void) listAllContacts;
+- (NSString *) showDetailsAtIndex: (int) id;
+- (BOOL) isDublicate: (NSString *)email;
+- (int) find: (NSString *)keyword;
 
 @end
