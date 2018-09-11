@@ -49,10 +49,12 @@
     NSLog(@"%@", currentDeck);
 }
 
-- (void) holdDie: (NSUInteger) die {
+
+- (void) holdDie: (NSUInteger) index {
     // 1. check if the die is already held.
     // 2. change the held property of the die.
-    [[_displayDice objectAtIndex:die] setHeld:![_displayDice objectAtIndex:die]];
+    Dice *die = [_displayDice objectAtIndex:(index - 1)];
+    [die setHeld:![die held]];
 }
 
 - (void) resetDice {
@@ -74,16 +76,27 @@
 }
 
 - (void) displayScore {
+    [self displayCurrentDeck];
     NSMutableString *displayMessage = [NSMutableString string];
     // 1. check if the game is over (rollCount)
     if (rollCount == 0) {
         //    - GAME OVER
-        [displayMessage appendString:@"\n- GAME OVER"];
+        [self holdAll];
+        [displayMessage appendString:@"\n- GAME OVER\nYour "];
+    } else {
+        //    - print the currentDeck and the score (the sum of faceValues)
+        // 2. not over
+        [displayMessage appendString:@"\nYour current "];
     }
     //    - print the currentDeck and the score (the sum of faceValues)
-    // 2. not over
-    //    - print the currentDeck and the score (the sum of faceValues)
-    
+    NSUInteger score = 0;
+    for (Dice *die in _displayDice) {
+        if ([die held]) {
+            score += [die faceValue];
+        }
+    }
+    [displayMessage appendString:@"score is "];
+    NSLog(@"%@%ld",displayMessage, score);
 }
 @end
 

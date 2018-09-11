@@ -13,7 +13,8 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSString *menu = @"\n'roll' to roll the dice\n'hold' to hold a dice\n'reset' to un-hold all dice\n'show' to see current dice\n'done' to end the game\n'display' to show current status\n";
+        NSString *menu = @"\n'roll' to roll the dice\n'hold' to hold a dice\n'reset' to un-hold all dice\n'show' to see current dice";
+        //NSString *menu = @"\n'roll' to roll the dice\n'hold' to hold a dice\n'reset' to un-hold all dice\n'show' to see current dice\n'done' to end the game\n'display' to show current status\n";
         GameController *player1 = [[GameController alloc] init];
         while (true) {
             NSString *input = [InputHandler getUserInputWithLength:10 withPrompt:menu];
@@ -21,21 +22,18 @@ int main(int argc, const char * argv[]) {
             // roll, hold, reset, display, quit
             if ([input isEqualToString:@"roll"]) {
                 [player1 roll];
-                [player1 displayCurrentDeck];
+                [player1 displayScore];
                 
             } else if ([input isEqualToString:@"quit"]) {
                 break;
             } else if ([input isEqualToString:@"hold"]) {
                 NSUInteger index = [[InputHandler getUserInputWithLength:10 withPrompt:@"\nWhich die do you want to hold?\nEnter the number"] integerValue];
                 [player1 holdDie:index];
+                [player1 displayScore];
             } else if ([input isEqualToString:@"reset"]) {
                 [player1 resetDice];
             } else if ([input isEqualToString:@"show"]) {
-                player1 ;
-            } else if ([input isEqualToString:@"done"]) {
-                break;
-            } else if ([input isEqualToString:@"display"]) {
-                break;
+                [player1 displayScore];
             }
         }
     }
