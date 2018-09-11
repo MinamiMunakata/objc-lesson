@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
             } else if ([input isEqualToString:@"new game"]) {
                 [player1 resetGame];
             } else if ([input isEqualToString:@"rolll"] || [input isEqualToString:@"roIl"]) {
-                [player1 makeAllDice0];
+                [player1 makeAllDice1];
                 [player1 displayCurrentDeck];
                 NSLog(@"🎉💖🌼YOU WON!!🎊🍾⭐️");
             }

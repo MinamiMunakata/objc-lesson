@@ -10,6 +10,7 @@
 @interface GameController()
 {
 @private int rollCount;
+@private int sumOfRollCount;
 }
 @end
 
@@ -21,6 +22,7 @@
     if (self) {
         _displayDice = [NSMutableArray arrayWithObjects:[Dice dice], [Dice dice], [Dice dice], [Dice dice], [Dice dice], nil]; //the last element should always be "nil";
         rollCount = MAX_ROLL;
+        sumOfRollCount = 0;
     }
     return self;
 }
@@ -35,6 +37,7 @@
             }
         }
         rollCount--;
+        sumOfRollCount++;
         NSLog(@"Remaining Rolls: %d", rollCount);
         if (rollCount == 0) {
             [self holdAll];
@@ -98,10 +101,10 @@
         }
     }
     [displayMessage appendString:@"score is "];
-    NSLog(@"%@%ld",displayMessage, score);
+    NSLog(@"%@%ld\nRools in total: %d",displayMessage, score,sumOfRollCount);
 }
 
-- (void) makeAllDice0{
+- (void) makeAllDice1{
     if (rollCount > 0) {
         for (Dice *die in _displayDice) {
             [die setFaceValue:1];

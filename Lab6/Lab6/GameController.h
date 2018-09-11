@@ -19,7 +19,7 @@
 - (void) resetDice;
 - (void) holdAll;
 - (void) displayScore;
-- (void) makeAllDice0;
+- (void) makeAllDice1;
 - (void) resetGame;
 
 @end
