@@ -7,10 +7,12 @@
 //
 #import "GameController.h"
 #define MAX_ROLL 5
+#define MAX_FACE_VALUE 30
+
 @interface GameController()
 {
-@private int rollCount;
-@private int sumOfRollCount;
+    @private int rollCount;
+    @private int sumOfRollCount;
 }
 @end
 
@@ -23,6 +25,9 @@
         _displayDice = [NSMutableArray arrayWithObjects:[Dice dice], [Dice dice], [Dice dice], [Dice dice], [Dice dice], nil]; //the last element should always be "nil";
         rollCount = MAX_ROLL;
         sumOfRollCount = 0;
+        _scoreRecords = [NSMutableArray new];
+        _bestScore = MAX_FACE_VALUE;
+        
     }
     return self;
 }
@@ -83,25 +88,35 @@
 }
 
 - (void) displayScore {
+    NSUInteger score = 0;
     NSMutableString *displayMessage = [NSMutableString string];
     // 1. check if the game is over (rollCount)
     if (rollCount == 0) {
         //    - GAME OVER
         [displayMessage appendString:@"\n- GAME OVER\nYour "];
-    } else {
         //    - print the currentDeck and the score (the sum of faceValues)
+        for (Dice *die in _displayDice) {
+            if ([die held]) {
+                score += [die faceValue];
+            }
+        }
+        if (score < _bestScore) {
+            _bestScore = score;
+        }
+        NSLog(@"%@%ld\nRolls in total: %d\nScore to beat: %ld",displayMessage, score,sumOfRollCount, _bestScore);
+    } else {
         // 2. not over
         [displayMessage appendString:@"\nYour current "];
-    }
-    //    - print the currentDeck and the score (the sum of faceValues)
-    NSUInteger score = 0;
-    for (Dice *die in _displayDice) {
-        if ([die held]) {
-            score += [die faceValue];
+        for (Dice *die in _displayDice) {
+            if ([die held]) {
+                score += [die faceValue];
+            }
         }
+        //    - print the currentDeck and the score (the sum of faceValues)
+        [displayMessage appendString:@"score is "];
+        NSLog(@"%@%ld\nRolls in total: %d",displayMessage, score,sumOfRollCount);
     }
-    [displayMessage appendString:@"score is "];
-    NSLog(@"%@%ld\nRools in total: %d",displayMessage, score,sumOfRollCount);
+
 }
 
 - (void) makeAllDice1{

@@ -12,6 +12,8 @@
 @interface GameController : NSObject
 
 @property (nonatomic, strong) NSMutableArray *displayDice;
+@property (nonatomic, strong) NSMutableArray *scoreRecords;
+@property (nonatomic, assign) NSUInteger bestScore;
 
 - (void) roll;
 - (void) displayCurrentDeck;
