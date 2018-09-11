@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E6BF062214857000029E2CE /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BF05F214857000029E2CE /* GameController.m */; };
+		5E6BF063214857000029E2CE /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BF061214857000029E2CE /* InputHandler.m */; };
 		5E8FD22821481F130046F386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8FD22721481F130046F386 /* main.m */; };
 		5E8FD230214822FB0046F386 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8FD22F214822FB0046F386 /* Dice.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E6BF05E214857000029E2CE /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		5E6BF05F214857000029E2CE /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		5E6BF060214857000029E2CE /* InputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
+		5E6BF061214857000029E2CE /* InputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 		5E8FD22421481F130046F386 /* Lab6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab6; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8FD22721481F130046F386 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E8FD22E214822FB0046F386 /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
@@ -60,6 +66,10 @@
 		5E8FD22621481F130046F386 /* Lab6 */ = {
 			isa = PBXGroup;
 			children = (
+				5E6BF05E214857000029E2CE /* GameController.h */,
+				5E6BF05F214857000029E2CE /* GameController.m */,
+				5E6BF060214857000029E2CE /* InputHandler.h */,
+				5E6BF061214857000029E2CE /* InputHandler.m */,
 				5E8FD22721481F130046F386 /* main.m */,
 				5E8FD22E214822FB0046F386 /* Dice.h */,
 				5E8FD22F214822FB0046F386 /* Dice.m */,
@@ -124,8 +134,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E6BF062214857000029E2CE /* GameController.m in Sources */,
 				5E8FD230214822FB0046F386 /* Dice.m in Sources */,
 				5E8FD22821481F130046F386 /* main.m in Sources */,
+				5E6BF063214857000029E2CE /* InputHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +264,7 @@
 				5E8FD22D21481F130046F386 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
