@@ -22,16 +22,19 @@ int main(int argc, const char * argv[]) {
             // roll, hold, reset, display, quit
             if ([input isEqualToString:@"roll"]) {
                 [player1 roll];
-                [player1 displayScore];
+                [player1 displayCurrentDeck];
                 
             } else if ([input isEqualToString:@"quit"]) {
                 break;
             } else if ([input isEqualToString:@"hold"]) {
                 NSUInteger index = [[InputHandler getUserInputWithLength:10 withPrompt:@"\nWhich die do you want to hold?\nEnter the number"] integerValue];
-                [player1 holdDie:index];
-                [player1 displayScore];
+                if (index >= 1 && index <= 5){
+                    [player1 holdDie:index];
+                    [player1 displayCurrentDeck];
+                }
             } else if ([input isEqualToString:@"reset"]) {
                 [player1 resetDice];
+                [player1 displayCurrentDeck];
             } else if ([input isEqualToString:@"show"]) {
                 [player1 displayScore];
             }

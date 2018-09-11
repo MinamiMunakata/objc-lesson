@@ -36,6 +36,9 @@
         }
         rollCount--;
         NSLog(@"Remaining Rolls: %d", rollCount);
+        if (rollCount == 0) {
+            [self holdAll];
+        }
     } else {
         NSLog(@"You can't roll more than %d times.", MAX_ROLL);
     }
@@ -47,6 +50,7 @@
         [currentDeck appendFormat:@" %@ ", [die description]];
     }
     NSLog(@"%@", currentDeck);
+    [self displayScore];
 }
 
 
@@ -76,12 +80,10 @@
 }
 
 - (void) displayScore {
-    [self displayCurrentDeck];
     NSMutableString *displayMessage = [NSMutableString string];
     // 1. check if the game is over (rollCount)
     if (rollCount == 0) {
         //    - GAME OVER
-        [self holdAll];
         [displayMessage appendString:@"\n- GAME OVER\nYour "];
     } else {
         //    - print the currentDeck and the score (the sum of faceValues)
