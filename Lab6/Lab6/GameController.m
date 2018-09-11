@@ -100,5 +100,22 @@
     [displayMessage appendString:@"score is "];
     NSLog(@"%@%ld",displayMessage, score);
 }
+
+- (void) makeAllDice0{
+    if (rollCount > 0) {
+        for (Dice *die in _displayDice) {
+            [die setFaceValue:1];
+        }
+        rollCount--;
+        NSLog(@"Remaining Rolls: %d", rollCount);
+        [self holdAll];
+    }
+
+}
+
+- (void) resetGame{
+    rollCount = MAX_ROLL;
+    [self resetDice];
+}
 @end
 

@@ -13,7 +13,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSString *menu = @"\n'roll' to roll the dice\n'hold' to hold a dice\n'reset' to un-hold all dice\n'show' to see current dice";
+        NSString *menu = @"\n'roll' to roll the dice\n'hold' to hold a dice\n'reset' to un-hold all dice\n'show' to see current dice\n'new game' to reset and play again.";
         //NSString *menu = @"\n'roll' to roll the dice\n'hold' to hold a dice\n'reset' to un-hold all dice\n'show' to see current dice\n'done' to end the game\n'display' to show current status\n";
         GameController *player1 = [[GameController alloc] init];
         while (true) {
@@ -37,6 +37,12 @@ int main(int argc, const char * argv[]) {
                 [player1 displayCurrentDeck];
             } else if ([input isEqualToString:@"show"]) {
                 [player1 displayScore];
+            } else if ([input isEqualToString:@"new game"]) {
+                [player1 resetGame];
+            } else if ([input isEqualToString:@"rolll"] || [input isEqualToString:@"roIl"]) {
+                [player1 makeAllDice0];
+                [player1 displayCurrentDeck];
+                NSLog(@"🎉💖🌼YOU WON!!🎊🍾⭐️");
             }
         }
     }
