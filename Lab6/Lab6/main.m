@@ -25,15 +25,16 @@ int main(int argc, const char * argv[]) {
                 
             } else if ([input isEqualToString:@"quit"]) {
                 break;
-            } else if ([input isEqualToString:@"quit"]) {
+            } else if ([input isEqualToString:@"hold"]) {
+                NSUInteger index = [[InputHandler getUserInputWithLength:10 withPrompt:@"\nWhich die do you want to hold?\nEnter the number"] integerValue];
+                [player1 holdDie:index];
+            } else if ([input isEqualToString:@"reset"]) {
+                [player1 resetDice];
+            } else if ([input isEqualToString:@"show"]) {
+                player1 ;
+            } else if ([input isEqualToString:@"done"]) {
                 break;
-            } else if ([input isEqualToString:@"quit"]) {
-                break;
-            } else if ([input isEqualToString:@"quit"]) {
-                break;
-            } else if ([input isEqualToString:@"quit"]) {
-                break;
-            } else if ([input isEqualToString:@"quit"]) {
+            } else if ([input isEqualToString:@"display"]) {
                 break;
             }
         }
