@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Dice.h"
 
 @interface GameController : NSObject
 
 @property (nonatomic, strong) NSMutableArray *displayDice;
 
+- (void) roll;
+- (void) displayCurrentDeck;
 @end
