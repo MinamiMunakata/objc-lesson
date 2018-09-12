@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Patient.h"
+#import "Doctor.h" // it means importing twice;
 
 @interface Prescription : NSObject
+
+@property (nonatomic, strong) Patient *patient;
+@property (nonatomic, strong) NSString *symptom;
+@property (nonatomic, strong) Doctor *doctor;
+
+- (instancetype)initWithPatient: (Patient *) patient  andDoctor: (Doctor *) doctor andSymptom: (NSString *) Symptom;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Patient.h"
+//#import "Patient.h"
+
+#import "Prescription.h"
+@class Patient;
 
 @interface Doctor : NSObject
 @property (nonatomic, strong) NSString *name;

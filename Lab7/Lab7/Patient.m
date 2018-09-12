@@ -7,6 +7,7 @@
 //
 
 #import "Patient.h"
+#import "Doctor.h"
 
 @interface Patient() {
     @private
@@ -17,12 +18,14 @@
 
 @implementation Patient
 
-- (instancetype)initWithName: (NSString *)name andAge: (NSUInteger) age andHealthCard: (Boolean) card
+- (instancetype)initWithName: (NSString *)name andAge: (NSUInteger) age andHealthCard: (Boolean) card andSymptom: (NSString *) symptom
 {
     self = [super init];
     if (self) {
         _name = name;
         _age = age;
+        _symptom = symptom;
+        _prescriptions = [NSMutableArray new];
         healthCard = card;
     }
     return self;

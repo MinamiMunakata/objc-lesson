@@ -11,6 +11,7 @@
 @interface Doctor() {
 @private
     NSMutableArray *patientList;
+    NSMutableArray *prescriptions;
 }
 
 @end
@@ -24,6 +25,7 @@
         _name = name;
         _specialization = specialization;
         patientList = [NSMutableArray new];
+        prescriptions = [NSMutableArray new];
     }
     return self;
 }
@@ -43,13 +45,13 @@
     if ([patientList containsObject:patient]) {
         NSLog(@"Medication on the way...");
         // 1. check the symptom.
-        
+        NSString *symptom = [patient symptom];
         // 2. create a prescription.
-        
+        Prescription *prescription = [[Prescription alloc] initWithPatient:patient andDoctor:self andSymptom:symptom];
         // 3. give the perscription to the patient.
-        
+        [[patient prescriptions]addObject:prescription];
+        [prescriptions addObject:prescription];
         // 4. give the medication.
-        
         return true;
     } else {
         NSLog(@"You are not my patient.");

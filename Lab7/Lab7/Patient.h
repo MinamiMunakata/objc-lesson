@@ -7,15 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Doctor.h"
+@class Doctor; // Letting know there is a Doctor class
+// #import "Doctor.h"
 
 @interface Patient : NSObject
 
 @property (nonatomic, assign) NSUInteger age;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *symptom;
+@property (nonatomic, strong) NSMutableArray *prescriptions;
 
-- (instancetype)initWithName: (NSString *)name andAge: (NSUInteger) age andHealthCard: (Boolean) card;
+- (instancetype)initWithName: (NSString *)name andAge: (NSUInteger) age andHealthCard: (Boolean) card andSymptom: (NSString *) symptom;
 - (Boolean) visitDoctor: (Doctor *) doctor;
 - (void) requestMedication: (Doctor *) doctor;
 

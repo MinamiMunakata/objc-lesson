@@ -10,4 +10,15 @@
 
 @implementation Prescription
 
+- (instancetype)initWithPatient: (Patient *) patient  andDoctor: (Doctor *) doctor andSymptom: (NSString *) Symptom
+{
+    self = [super init];
+    if (self) {
+        _patient = patient;
+        _doctor = doctor;
+        _symptom = Symptom;
+    }
+    return self;
+}
+
 @end
