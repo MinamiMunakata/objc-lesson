@@ -11,6 +11,10 @@
 @implementation PaymentGateway
 
 -(void) processPaymentAmount: (NSInteger) paymentAmount {
-    
+    if ([self.paymentDelegate canProcessPayment]) {
+        [self.paymentDelegate processPaymentAmount:paymentAmount];
+    } else {
+        NSLog(@"Sorry, the transaction failed.");
+    }
 }
 @end

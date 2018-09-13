@@ -10,4 +10,17 @@
 
 @implementation AmazonPaymentService
 
+
+
+- (void)processPaymentAmount:(NSInteger)paymentAmount {
+    NSLog(@"Amazon processed amount $%ld", paymentAmount);
+}
+
+- (BOOL)canProcessPayment {
+    if (arc4random_uniform(2)) {
+        return YES;
+    }
+    return NO;
+}
+
 @end
