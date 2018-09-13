@@ -12,6 +12,7 @@
 #import "PaypalPaymentService.h"
 #import "StripePaymentService.h"
 #import "AmazonPaymentService.h"
+#import "ApplePaymentService.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -22,6 +23,8 @@ int main(int argc, const char * argv[]) {
         PaypalPaymentService *paypal = [PaypalPaymentService new];
         StripePaymentService *stripe = [StripePaymentService new];
         AmazonPaymentService *amazon = [AmazonPaymentService new];
+        ApplePaymentService *apple = [ApplePaymentService new];
+        
         switch (paymentMethod) {
             case 1:
                 paymentGateway.paymentDelegate = paypal;
@@ -31,6 +34,9 @@ int main(int argc, const char * argv[]) {
                 break;
             case 3:
                 paymentGateway.paymentDelegate = amazon;
+                break;
+            case 4:
+                paymentGateway.paymentDelegate = apple;
                 break;
             default:
                 break;
