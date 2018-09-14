@@ -9,14 +9,40 @@
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
 #import "PaymentGateway.h"
+#import "PaypalPaymentService.h"
+#import "StripePaymentService.h"
+#import "AmazonPaymentService.h"
+#import "ApplePaymentService.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSInteger paymentAmount = arc4random_uniform(900) + 100;
-        NSString *message = [NSString stringWithFormat: @"\nThank you for shopping at Acme.com\nYour total today is $%ld\nPlease select your payment method: 1: Paypal, 2: Stripe, 3: Amazon\n", paymentAmount];
+        NSString *message = [NSString stringWithFormat: @"\nThank you for shopping at Acme.com\nYour total today is $%ld\nPlease select your payment method: 1: Paypal, 2: Stripe, 3: Amazon 4: ApplePay\n", paymentAmount];
         NSInteger paymentMethod = [[InputHandler getUserInputWithLength:10 withPrompt:message] integerValue];
-        PaymentGateway paymentGateway = [PaymentGateway new];
+        PaymentGateway *paymentGateway = [PaymentGateway new];
+        PaypalPaymentService *paypal = [PaypalPaymentService new];
+        StripePaymentService *stripe = [StripePaymentService new];
+        AmazonPaymentService *amazon = [AmazonPaymentService new];
+        ApplePaymentService *apple = [ApplePaymentService new];
+        
+        switch (paymentMethod) {
+            case 1:
+                paymentGateway.paymentDelegate = paypal;
+                break;
+            case 2:
+                paymentGateway.paymentDelegate = stripe;
+                break;
+            case 3:
+                paymentGateway.paymentDelegate = amazon;
+                break;
+            case 4:
+                paymentGateway.paymentDelegate = apple;
+                break;
+            default:
+                break;
+        }
         [paymentGateway processPaymentAmount:paymentAmount];
+        
         
     }
     return 0;

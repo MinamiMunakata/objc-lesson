@@ -1,9 +1,9 @@
 //
 //  main.m
-//  Lab8
+//  Lab11
 //
-//  Created by Steven Masuch on 2014-07-19.
-//  Copyright (c) 2014 Lighthouse Labs. All rights reserved.
+//  Created by Minami Munakata on 2018-09-13.
+//  Copyright © 2018 Minami Munakata. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,7 +13,7 @@
 
 int main(int argc, const char * argv[])
 {
-
+    
     @autoreleasepool {
         
         NSLog(@"Please pick your pizza size and toppings:");
@@ -42,7 +42,7 @@ int main(int argc, const char * argv[])
             // And then send some message to the kitchen...
             
         }
-
+        
     }
     return 0;
 }
