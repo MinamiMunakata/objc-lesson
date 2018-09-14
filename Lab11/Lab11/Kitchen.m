@@ -1,9 +1,9 @@
 //
 //  Kitchen.m
-//  Lab8
+//  Lab11
 //
-//  Created by Steven Masuch on 2014-07-19.
-//  Copyright (c) 2014 Lighthouse Labs. All rights reserved.
+//  Created by Minami Munakata on 2018-09-14.
+//  Copyright © 2018 Minami Munakata. All rights reserved.
 //
 
 #import "Kitchen.h"
@@ -12,12 +12,20 @@
 
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings
 {
+    if (self.delegate == nil) {
+        return [[Pizza alloc] initWithSize:size andToppings:toppings];
+    }
     if ([self.delegate kitchen:self shouldMakePizzaOfSize:size andToppings:toppings]) {
         if ([self.delegate kitchenShouldUpgradeOrder:self]) {
             size = large;
         }
         Pizza *pizza = [[Pizza alloc] initWithSize:size andToppings:toppings];
+        if ([self.delegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
+            [self.delegate kitchenDidMakePizza:pizza];
+        }
+        return pizza;
     }
+    return nil;
 }
 
 @end

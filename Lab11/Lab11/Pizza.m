@@ -1,9 +1,9 @@
 //
 //  Pizza.m
-//  Lab8
+//  Lab11
 //
-//  Created by Minami Munakata on 2018-09-13.
-//  Copyright © 2018 Lighthouse Labs. All rights reserved.
+//  Created by Minami Munakata on 2018-09-14.
+//  Copyright © 2018 Minami Munakata. All rights reserved.
 //
 
 #import "Pizza.h"
@@ -45,7 +45,7 @@
         default:
             break;
     }
-    return [NSString stringWithFormat:@"Size: %@, Toppings: %@, %@, %@.", pizzaSize, _toppings[0], _toppings[1], _toppings[2]];
+    return [NSString stringWithFormat:@"Your Pizza! Size: %@, Toppings: %@, %@, %@.", pizzaSize, _toppings[0], _toppings[1], _toppings[2]];
 }
 
 @end

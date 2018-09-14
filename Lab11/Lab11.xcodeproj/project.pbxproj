@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E6F1506214C27AB00B00C5C /* ManagerWhoHatesAnchovies.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F1505214C27AB00B00C5C /* ManagerWhoHatesAnchovies.m */; };
+		5E6F1509214C282000B00C5C /* CherryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F1508214C282000B00C5C /* CherryManager.m */; };
+		5E6F150C214C2D1400B00C5C /* Pizza.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F150B214C2D1400B00C5C /* Pizza.m */; };
+		5E6F150F214C2D5000B00C5C /* Kitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F150E214C2D5000B00C5C /* Kitchen.m */; };
 		5EAEDA81214B274700896E10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEDA80214B274700896E10 /* main.m */; };
-		5EAEDA8D214B277700896E10 /* Kitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEDA89214B277700896E10 /* Kitchen.m */; };
-		5EAEDA8E214B277700896E10 /* Pizza.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEDA8B214B277700896E10 /* Pizza.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,12 +27,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E6F1504214C27AB00B00C5C /* ManagerWhoHatesAnchovies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerWhoHatesAnchovies.h; sourceTree = "<group>"; };
+		5E6F1505214C27AB00B00C5C /* ManagerWhoHatesAnchovies.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerWhoHatesAnchovies.m; sourceTree = "<group>"; };
+		5E6F1507214C282000B00C5C /* CherryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CherryManager.h; sourceTree = "<group>"; };
+		5E6F1508214C282000B00C5C /* CherryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CherryManager.m; sourceTree = "<group>"; };
+		5E6F150A214C2D1400B00C5C /* Pizza.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pizza.h; sourceTree = "<group>"; };
+		5E6F150B214C2D1400B00C5C /* Pizza.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pizza.m; sourceTree = "<group>"; };
+		5E6F150D214C2D5000B00C5C /* Kitchen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kitchen.h; sourceTree = "<group>"; };
+		5E6F150E214C2D5000B00C5C /* Kitchen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kitchen.m; sourceTree = "<group>"; };
 		5EAEDA7D214B274700896E10 /* Lab11 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab11; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAEDA80214B274700896E10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5EAEDA88214B277700896E10 /* Kitchen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Kitchen.h; path = "../../Lab8-PizzaRestaurant/Lab8/Kitchen.h"; sourceTree = "<group>"; };
-		5EAEDA89214B277700896E10 /* Kitchen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Kitchen.m; path = "../../Lab8-PizzaRestaurant/Lab8/Kitchen.m"; sourceTree = "<group>"; };
-		5EAEDA8A214B277700896E10 /* Pizza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pizza.h; path = "../../Lab8-PizzaRestaurant/Lab8/Pizza.h"; sourceTree = "<group>"; };
-		5EAEDA8B214B277700896E10 /* Pizza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pizza.m; path = "../../Lab8-PizzaRestaurant/Lab8/Pizza.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +69,15 @@
 		5EAEDA7F214B274700896E10 /* Lab11 */ = {
 			isa = PBXGroup;
 			children = (
-				5EAEDA88214B277700896E10 /* Kitchen.h */,
-				5EAEDA89214B277700896E10 /* Kitchen.m */,
-				5EAEDA8A214B277700896E10 /* Pizza.h */,
-				5EAEDA8B214B277700896E10 /* Pizza.m */,
 				5EAEDA80214B274700896E10 /* main.m */,
+				5E6F1504214C27AB00B00C5C /* ManagerWhoHatesAnchovies.h */,
+				5E6F1505214C27AB00B00C5C /* ManagerWhoHatesAnchovies.m */,
+				5E6F1507214C282000B00C5C /* CherryManager.h */,
+				5E6F1508214C282000B00C5C /* CherryManager.m */,
+				5E6F150A214C2D1400B00C5C /* Pizza.h */,
+				5E6F150B214C2D1400B00C5C /* Pizza.m */,
+				5E6F150D214C2D5000B00C5C /* Kitchen.h */,
+				5E6F150E214C2D5000B00C5C /* Kitchen.m */,
 			);
 			path = Lab11;
 			sourceTree = "<group>";
@@ -128,9 +138,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EAEDA8E214B277700896E10 /* Pizza.m in Sources */,
+				5E6F150C214C2D1400B00C5C /* Pizza.m in Sources */,
+				5E6F1509214C282000B00C5C /* CherryManager.m in Sources */,
+				5E6F150F214C2D5000B00C5C /* Kitchen.m in Sources */,
 				5EAEDA81214B274700896E10 /* main.m in Sources */,
-				5EAEDA8D214B277700896E10 /* Kitchen.m in Sources */,
+				5E6F1506214C27AB00B00C5C /* ManagerWhoHatesAnchovies.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
