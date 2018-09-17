@@ -17,17 +17,31 @@ int main(int argc, const char * argv[])
     
     @autoreleasepool {
         Kitchen *restaurantKitchen = [Kitchen new];
-        ManagerWhoHatesAnchovies *managerA = [ManagerWhoHatesAnchovies new];
-        CherryManager *managerB = [CherryManager new];
-        int rand = arc4random_uniform(2);
-        NSArray *managers = [NSArray arrayWithObjects:managerA, managerB, nil];
-        restaurantKitchen.delegate = managers[rand];
+        ManagerWhoHatesAnchovies *managerA;
+        CherryManager *managerB;
         
         while (TRUE) {
-            if (!_manager) {
-                <#statements#>
-            }
             // Loop forever
+            // manager option
+            NSLog(@"Choose [1] managerA, [2] managerB, or [3] no manager at all");
+            NSLog(@"> ");
+            char cstr[100];
+            fgets (cstr, 100, stdin);
+            NSString *option = [[NSString alloc] initWithUTF8String:cstr];
+            option = [option stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if ([option integerValue] == 3) {
+                restaurantKitchen.delegate = nil;
+            } else if ([option integerValue] == 1) {
+                if (!managerA) {
+                    managerA = [ManagerWhoHatesAnchovies new];
+                }
+                restaurantKitchen.delegate = managerA;
+            } else if ([option integerValue] == 2) {
+                if (!managerB) {
+                    managerB = [CherryManager new];
+                }
+                restaurantKitchen.delegate = managerB;
+            }
             
             // get user input
             NSLog(@"Please pick your pizza size and toppings:");
@@ -51,20 +65,6 @@ int main(int argc, const char * argv[])
             } else if ([commandWords[0] isEqualToString:@"large"]) {
                 int size = small;
                 NSLog(@"%@",[restaurantKitchen makePizzaWithSize:size toppings:[NSArray arrayWithObjects:commandWords[1],commandWords[2],commandWords[3], nil]]);
-            }
-            
-            // manager option
-            NSLog(@"Do you want to change a manager or no manager at all? : (y/n)\n");
-            NSLog(@"> ");
-            char cstr[100];
-            fgets (cstr, 100, stdin);
-            NSString *option = [[NSString alloc] initWithUTF8String:cstr];
-            option = [option stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            if ([option isEqualToString:@"y"]) {
-                rand = (rand == 0) ? 1: 0;
-                restaurantKitchen.delegate = managers[rand];
-            } else if ([option isEqualToString:@"n"]) {
-                restaurantKitchen.delegate = nil;
             }
             
         }
