@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Kitchen.h"
+@class DeliveryService;
 
 @interface CherryManager : NSObject <KitchenDelegate>
+@property (nonatomic, strong) DeliveryService *service;
+
+- (instancetype)initWithDeliveryService: (DeliveryService *) service;
 
 @end

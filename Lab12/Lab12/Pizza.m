@@ -45,7 +45,7 @@
         default:
             break;
     }
-    return [NSString stringWithFormat:@"Your Pizza! Size: %@, Toppings: %@, %@, %@.", pizzaSize, _toppings[0], _toppings[1], _toppings[2]];
+    return [NSString stringWithFormat:@"Size: %@, Toppings: %@, %@, %@.", pizzaSize, _toppings[0], _toppings[1], _toppings[2]];
 }
 
 @end
