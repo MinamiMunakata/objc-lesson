@@ -10,4 +10,8 @@
 
 @implementation NSString (PigLatine)
 
+-(NSString *)stringByPigLatinization​ {
+    
+}
+
 @end

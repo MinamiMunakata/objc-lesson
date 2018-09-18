@@ -10,8 +10,23 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        char str[100];
+        fgets(str, 100, stdin);
+        NSString *input = [[NSString alloc] initWithUTF8String:str];
+        input = [input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [input lowercaseString];
+        NSArray *strArr = [input componentsSeparatedByString:@" "];
+        NSArray *vowel = [NSArray arrayWithObjects:@"a",@"e",@"i",@"o",@"u", nil];
+        for (NSString * word in strArr) {
+            NSUInteger length = word.length;
+            NSMutableString *pig = [NSMutableString string];
+            unichar buffer[length + 1];
+            [word getCharacters:buffer range:NSMakeRange(0, length)];
+            int i = 0;
+            while () {
+                <#statements#>
+            }
+        }
     }
     return 0;
 }
