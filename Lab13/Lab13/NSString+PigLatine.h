@@ -10,6 +10,7 @@
 
 @interface NSString (PigLatine)
 
--(NSString *)stringByPigLatinization​;
+-(NSString *)stringByPigLatinization​: (NSString *) input;
+-(BOOL) hasCluster: (NSString *) word;
 
 @end
