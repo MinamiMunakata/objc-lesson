@@ -22,18 +22,18 @@ int main(int argc, const char * argv[]) {
         NSLog(@"----------");
         for (NSString * word in strArr) {
             NSLog(@"----------1 %@", word);
-            NSUInteger length = word.length;
             NSMutableString *pig = [NSMutableString string];
-            NSLog(@"----------2");
-            unichar buffer[length + 1];
-            [word getCharacters:buffer range:NSMakeRange(0, length)];
-            NSLog(@"----------3");
-            int i = 0;
-            while (i < length) {
-                NSLog(@"%c", buffer[i]);
-                i++;
+            NSUInteger firstVow;
+            NSUInteger length = word.length;
+            for (NSUInteger i = 0; i < length; i++) {
+                <#statements#>
             }
+            
+            
         }
     }
     return 0;
+}
+(int) indexOfFirstVowel: (NSString *) word {
+    
 }
