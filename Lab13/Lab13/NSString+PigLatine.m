@@ -11,7 +11,7 @@
 @implementation NSString (PigLatine)
 
 -(NSString *)stringByPigLatinization​ {
-    
+    return @"";
 }
 
 @end
